@@ -1,0 +1,48 @@
+Goal: Combine JS, HTML and CSS via DOM all together. 
+
+Develope more indepth understanding of vanilla JS. 
+
+
+Preparation: Familiarize yourself with my starter code https://repl.it/@StephenZhang2/jssnake2#script.js
+
+The starter code drafted has implemented the following functions 
+1. Each time the snake eats a piece of food, its body grows longer, making the game increasingly difficult. 
+2. Show how to use ij key to control the moving direction of head. 
+3. When food is hit by head, snake grow by length 1 and the food is randomly spawned. 
+4. The player cannot stop the snake from moving while the game is in progress. 
+5. Food was spawned randomly at the  begining, and spawned randomly when eaten. 
+6. singly linked list is used to represent snake body. 
+
+
+Requirements:
+
+Enhance the starter code to complete a snake game that runs reasonably.
+
+1. If hitting walls, the game is over! Using Alert Window and the snake should stop moving!   
+
+2. If the user hits game arrow keys, the snake should change moving directions correspondingly. The user controls the direction of the snake's head (up, down, left, or right), and the snake's body follows.
+
+3. The player can attempt to make the snake go in reverse, but your program should prevent that from happenning.   
+
+4. The new food should be spawned in a position that is NOT part of the snake body. 
+
+5. User should be able to restart the game with length 1 snake spawned at a random location and food randomly spawned at a random location different from the snake.    
+
+6. Below the snake game canvas there should be an text section showing how to play the game!
+
+
+7. Show snake head and tail in two distinct colors.!
+
+
+8. Make you game to restartable by clicking a button without refreshing the webpage. Need to use logic flag and operations. Also needs thoughts and time. 
+ 
+
+9. Optionally, you can try  to improve the game. The starter code was done basically from scratch and is very basic. There should be plenty room to improve and fine tune! 
+
+
+10. Optionally enhance the game interface using some styling features for fun. (won't be part of the grade though!)
+
+
+11. Document how you have technically addressed the above issues, and what issue remains in a summary/reflection page. Add it as a hyperlink to the  game page.  
+
+Look forward to play your snake game soon. 
