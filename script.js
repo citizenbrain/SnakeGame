@@ -1,3 +1,5 @@
+//"use strict"
+
 class Node{
     constructor(row, col, next = null){
         this.row = row,
@@ -91,8 +93,12 @@ document.addEventListener("DOMContentLoaded", function(){
                 case 'KeyJ':
                     direction='left';
                     break;
-
-
+                case 'KeyK':
+                    direction = 'down';
+                    break;
+                case 'KeyL':
+                    direction = 'right';
+                    break;
             }
 
         }
@@ -113,10 +119,10 @@ document.addEventListener("DOMContentLoaded", function(){
         snakecolor="rgb(10,45,134)"
         foodcolor="rgb(0,245,100)"
 
-        rownum=15;
-        colnum=15;
+        rownum=18;
+        colnum=18;
         cellsize=22;
-        inndercellsize=20;
+        inndercellsize=19;
 
 
         initializesnake();
@@ -214,9 +220,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
         direction='up';
 
+     /*   function hitWall(row1, col1) {
+            if(row1 >)
+        }*/
+
         function collide(row1, col1, row2, col2)
         {
-            if(row1==row2 && col1==col2)
+            if(row1===row2 && col1===col2)
                 return true;
             else
                 return false;
@@ -232,13 +242,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
         }
 
-        function hitself(newrow, newcol)
+        function hitSelfOrWall(newrow, newcol)
         {
             agent=list.head;
             while (agent!=null)
             {
-                if (collide(newrow, newcol, agent.row, agent.col))
+                if (collide(newrow, newcol, agent.row, agent.col)) {
+                    alert("You hit yourself game over!");
                     return true;
+                }
+
 
                 agent=agent.next;
             }
@@ -246,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function(){
         }
 
         function growsnake() {
-            if (gameoverflag==true)
+            if (gameoverflag===true)
                 return;
 
 //alert("interval")
@@ -263,10 +276,17 @@ document.addEventListener("DOMContentLoaded", function(){
                     //list.insertAtBeginning(newrow, newcol);
                     //list.deleteLastNode();
                     break;
+                case 'down':
+                    newrow=list.head.row+1;
+                    newcol=list.head.col;
+                    break;
+                case 'right':
+                    newrow=list.head.row;
+                    newcol=list.head.col+1;
             }
 
 
-            if (hitself(newrow, newcol))
+            if (hitSelfOrWall(newrow, newcol))
             {
                 console.log("Game over!");
                 gameoverflag=true;
