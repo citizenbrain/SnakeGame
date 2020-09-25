@@ -9,7 +9,7 @@
 <div>
     <a href="index.html">Back to Game</a>
 </div>
-<article>
+
 <p>To address going off the board I used an if statement to check where the snake was relative to the board size and if it surpassed the boundaries I had it alert and stop the game while also doing a reset of the startButton text value and also changing the paragraph text content.
 </p>
 
@@ -18,6 +18,6 @@
 <p>Most of the problems I had were finding the best spot to remove the eventListener on the Start button. I was getting some buggy restarts and couldn't figure out if it was in the code or the browser but I believe i've figured it out. But while testing again I did break it somehow but I can't replicate it so I don't know if it's certain browsers on my machine that have settings that aren't good or if it's some other item. It seems to work as intended now and I can't replicate the problem so maybe it's just certain browsers in rare situations.</p>
 
 <p>To make sure food didn't spawn inside the snake body I cycle through and compare the desired food location and if it matched anywhere in the snake body then to run the function again to find a new location.</p>
-</article>
+
 </body>
 </html>
