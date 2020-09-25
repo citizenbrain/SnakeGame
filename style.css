@@ -3,4 +3,5 @@ canvas {
     padding: 1em;
     background-color: black;
     border: 0.5em groove brown;
+    text-align: center;
 }

@@ -42,6 +42,16 @@
     <property name="settings.editor.selected.configurable" value="terminal" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RunManager">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Snake Game/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,14 +62,36 @@
       <updated>1600184846702</updated>
       <workItem from="1600184847890" duration="229000" />
       <workItem from="1600789633277" duration="1981000" />
-      <workItem from="1600816083439" duration="2519000" />
+      <workItem from="1600816083439" duration="2556000" />
+      <workItem from="1600861428313" duration="823000" />
+      <workItem from="1600907748709" duration="879000" />
+      <workItem from="1600951062772" duration="3776000" />
+      <workItem from="1600965881073" duration="1241000" />
+      <workItem from="1600971870478" duration="1372000" />
+      <workItem from="1600988504141" duration="14906000" />
     </task>
+    <task id="LOCAL-00001" summary="cha cha changes">
+      <created>1600818623669</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600818623669</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="cha cha changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="cha cha changes" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="1535" y="628" key="CommitChangelistDialog2" timestamp="1600818623040">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1535" y="628" key="CommitChangelistDialog2/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1600818623040" />
     <state x="1793" y="957" key="Github.ShareDialog" timestamp="1600816114243">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
@@ -68,9 +100,65 @@
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state x="1686" y="764" key="Github.UntrackedFilesDialog/0.0.3840.2120@0.0.3840.2120" timestamp="1600816124431" />
+    <state width="3797" height="782" key="GridCell.Tab.0.bottom" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.0.bottom/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.0.center" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.0.center/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.0.left" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.0.left/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.0.right" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.0.right/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.1.bottom" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.1.bottom/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.1.center" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.1.center/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.1.left" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.1.left/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.1.right" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.1.right/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.2.bottom" timestamp="1601002783845">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.2.bottom/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783845" />
+    <state width="3797" height="782" key="GridCell.Tab.2.center" timestamp="1601002783845">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.2.center/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783845" />
+    <state width="3797" height="782" key="GridCell.Tab.2.left" timestamp="1601002783844">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.2.left/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783844" />
+    <state width="3797" height="782" key="GridCell.Tab.2.right" timestamp="1601002783845">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state width="3797" height="782" key="GridCell.Tab.2.right/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601002783845" />
+    <state x="1512" y="792" key="Vcs.Push.Dialog.v2" timestamp="1600818626575">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1512" y="792" key="Vcs.Push.Dialog.v2/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1600818626575" />
     <state x="116" y="308" width="1736" height="1936" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1600791576745">
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state x="116" y="308" width="1736" height="1936" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1600791576745" />
+    <state x="1583" y="495" width="672" height="678" key="search.everywhere.popup" timestamp="1601003285245">
+      <screen x="0" y="0" width="3840" height="2120" />
+    </state>
+    <state x="1583" y="495" width="672" height="678" key="search.everywhere.popup/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601003285245" />
   </component>
 </project>

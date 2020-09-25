@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
+    <title>Snake Game - Brian Butler Fall 2020</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -13,30 +13,25 @@
 <script src="script.js"></script>
 
 
-<input class="submit"
-       type="button"
-       value="Start" id='start'>
-
+<input type="button"
+       value="Start" id="start">
+<input type="button"
+       value="Reset" id="reset" onclick="letsgo()">
 
 
 <div>
+    <pre>
     Click start to play!
     I: move up
     J: move left
     K: move down
     L: move right
+    </pre>
 </div>
-
 
 <canvas id="grid" width=400 height=400></canvas>
 
-
-
-
-
-    <hr>
-
-
+<p></p>
 
 
 </body>

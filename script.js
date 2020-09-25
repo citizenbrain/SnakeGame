@@ -1,10 +1,14 @@
-//"use strict"
+"use strict"
+
+window.onload = function(){
+    letsgo();
+}
 
 class Node{
     constructor(row, col, next = null){
-        this.row = row,
-            this.col=col,
-            this.next = next
+            this.row = row;
+            this.col = col;
+            this.next = next;
     }
 }
 
@@ -22,45 +26,23 @@ LinkedList.prototype.insertAtBeginning = function(row, col){
 // As we are inserting at the beginning the head pointer needs to now point at the newNode.
 
     this.head = newNode;
+
     return this.head;
 }
 
 
-LinkedList.prototype.insertAtEnd = function(row, col){
-// A newNode object is created with property data and next=null
-
-    let newNode = new Node(row,col);
-// When head = null i.e. the list is empty, then head itself will point to the newNode.
-    if(!this.head){
-        this.head = newNode;
-        return this.head;
-    }
-// Else, traverse the list to find the tail (the tail node will initially be pointing at null), and update the tail's next pointer.
-    let tail = this.head;
-    while(tail.next !== null){
-        tail = tail.next;
-    }
-    tail.next = newNode;
-    return this.head;
-}
-
-LinkedList.prototype.deleteFirstNode = function(){
-    if(!this.head){
-        return;
-    }
-    this.head = this.head.next;
-    return this.head;
-}
 
 LinkedList.prototype.deleteLastNode = function(){
+
     if(!this.head){
         return null;
     }
-    // if only one node in the list
+
     if(!this.head.next){
         this.head = null;
         return;
     }
+
     let previous = this.head;
     let tail = this.head.next;
 
@@ -73,25 +55,17 @@ LinkedList.prototype.deleteLastNode = function(){
     return this.head;
 }
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", function(){
-        // Handler when the DOM is fully loaded
-
-
+function letsgo(){
         document.addEventListener('keypress', logKey);
 
         function logKey(e) {
             console.log(e.code);
-            switch(e.code)
-            {
+            switch (e.code) {
                 case "KeyI":
-                    direction='up';
+                    direction = 'up';
                     break;
                 case 'KeyJ':
-                    direction='left';
+                    direction = 'left';
                     break;
                 case 'KeyK':
                     direction = 'down';
@@ -100,104 +74,82 @@ document.addEventListener("DOMContentLoaded", function(){
                     direction = 'right';
                     break;
             }
-
         }
-//define your own arrow keys such as IJKL WASD
-
-// above is the naive  implementation of a linkedlist in js to store 2d points.
 
         let list = new LinkedList();
 
+        let gameoverflag = false;
+        let ctx = document.getElementById('grid').getContext('2d');
 
-        gameoverflag=false;
-
-
-
-        var ctx = document.getElementById('grid').getContext('2d');
-
-        emptycolor="rgb(100,45,0)"
-        snakecolor="rgb(10,45,134)"
-        foodcolor="rgb(0,245,100)"
-
-        rownum=18;
-        colnum=18;
-        cellsize=22;
-        inndercellsize=19;
+        let emptycolor = "rgb(100,45,0)";
+        let snakecolor = "rgb(10,45,134)";
+        let foodcolor = "rgb(0,245,100)";
+        let headcolor = "rgb(0,100,100)";
+        let tailcolor = "rgb(0,100,0)";
+        let foodrow;
+        let foodcol;
+        let rownum = 19;
+        let colnum = 19;
+        let cellsize = 21;
+        let inndercellsize = 20;
 
 
         initializesnake();
-
         drawboard();
-
         randomfood();
-
         drawfood();
         drawsnake();
 
-        function initializesnake()
-        {
-            snakerow= Math.floor(Math.random() * rownum);
-            snakecol= Math.floor(Math.random() * colnum);
+        function initializesnake() {
+            let snakerow;
+            snakerow = Math.floor(Math.random() * rownum);
+            let snakecol;
+            snakecol = Math.floor(Math.random() * colnum);
 
-            list.insertAtBeginning(snakerow,snakecol);
-            //list.insertAtBeginning(4,5);
-
-
+            list.insertAtBeginning(snakerow, snakecol);
         }
 
         function randomfood() {
-            foodrow= Math.floor(Math.random() * rownum);
-            foodcol= Math.floor(Math.random() * colnum);
+            let agent = list.head;
+            foodrow = Math.floor(Math.random() * rownum);
+            foodcol = Math.floor(Math.random() * colnum);
+            while (agent != null) {
+                if (foodrow === agent.row && foodcol === agent.col) {
+                    randomfood();
+                }
+                agent = agent.next;
+            }
         }
 
-        function drawfood()
-        {
+        function drawfood() {
             ctx.fillStyle = foodcolor;
-            console.log("food:", foodrow, foodcol);
-
             ctx.beginPath();
-            x=foodcol*cellsize;
-            y=foodrow*cellsize;
-            ctx.rect (x, y, inndercellsize, inndercellsize);
+            let x = foodcol * cellsize;
+            let y = foodrow * cellsize;
+            ctx.rect(x, y, inndercellsize, inndercellsize);
             ctx.fill();
             ctx.closePath();
-
         }
 
-        function drawboard()
-        {
+        function drawboard() {
             ctx.fillStyle = emptycolor;
-
-
             ctx.beginPath();
 
-            for (var row = 0, i = 0; i < rownum; row+=cellsize, i++) {
+            for (let row = 0, i = 0; i < rownum; row += cellsize, i++) {
 
-                for (var col = 0, j=0; j < colnum; col+=cellsize, j++) {
-                    ctx.rect (row, col, inndercellsize, inndercellsize);
+                for (let col = 0, j = 0; j < colnum; col += cellsize, j++) {
+                    ctx.rect(row, col, inndercellsize, inndercellsize);
                 }
             }
-
             ctx.fill();
             ctx.closePath();
         }
 
+        let paragraph = document.querySelector('p');
+        let s = document.getElementById('start')
 
-
-
-
-// querySelector
-//document.querySelector('#start');
-
-        const paragraph = document.querySelector('p');
-
-//alert("Hello! I am out!!");
-
-
-        const s = document.getElementById('start')
-        if(s){
+        if (s) {
             s.addEventListener('click', run, false);
-            //alert("Hello! I am in  ddd ");
         }
         console.log(s, paragraph)
 
@@ -205,11 +157,8 @@ document.addEventListener("DOMContentLoaded", function(){
             if (s.value === 'Start') {
                 s.value = 'Stop';
 
-                setInterval (drawsnake, 500 );
-                setInterval (growsnake, 1000 );
-
-                //setTimeout(drawsnake, 3000)
-                //setTimeout(growsnake, 2000)
+                setInterval(drawsnake, 300);
+                setInterval(growsnake, 300);
 
                 paragraph.textContent = 'The game has started!';
             } else {
@@ -218,160 +167,132 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         }
 
-        direction='up';
+        let direction = 'up';
 
-     /*   function hitWall(row1, col1) {
-            if(row1 >)
-        }*/
-
-        function collide(row1, col1, row2, col2)
-        {
-            if(row1===row2 && col1===col2)
-                return true;
-            else
-                return false;
+        function collide(row1, col1, row2, col2) {
+            return row1 === row2 && col1 === col2;
         }
 
-        function hitfood(row, col)
-        {
+        function hitfood(row, col) {
 
-            if(collide(row, col,foodrow, foodcol))
-                return true;
-            else
-                return false;
-
+            return !!collide(row, col, foodrow, foodcol);
         }
 
-        function hitSelfOrWall(newrow, newcol)
-        {
-            agent=list.head;
-            while (agent!=null)
-            {
+        function hitSelfOrWall(newrow, newcol) {
+            let agent;
+            agent = list.head;
+            while (agent != null) {
                 if (collide(newrow, newcol, agent.row, agent.col)) {
                     alert("You hit yourself game over!");
+                    s.value = 'Start';
+                    paragraph.textContent = 'The Game is stopped.';
+                    return true;
+                }
+                if (agent.row >= rownum || agent.col >= colnum || agent.row < 0 || agent.col < 0) {
+                    alert("You went off the board!");
+                    s.value = 'Start';
+                    paragraph.textContent = 'The Game is stopped.';
                     return true;
                 }
 
-
-                agent=agent.next;
+                agent = agent.next;
             }
             return false;
         }
 
         function growsnake() {
-            if (gameoverflag===true)
+            if (gameoverflag === true) {
+                list.head = null;
                 return;
-
-//alert("interval")
-            switch(direction)
-            {
+            }
+            let newcol;
+            let newrow;
+            switch (direction) {
                 case 'up':
-
-                    newrow=list.head.row-1;
-                    newcol=list.head.col;
+                    newrow = list.head.row - 1;
+                    newcol = list.head.col;
                     break;
                 case 'left':
-                    newrow=list.head.row;
-                    newcol=list.head.col-1;
-                    //list.insertAtBeginning(newrow, newcol);
-                    //list.deleteLastNode();
+                    newrow = list.head.row;
+                    newcol = list.head.col - 1;
+
                     break;
                 case 'down':
-                    newrow=list.head.row+1;
-                    newcol=list.head.col;
+                    newrow = list.head.row + 1;
+                    newcol = list.head.col;
                     break;
                 case 'right':
-                    newrow=list.head.row;
-                    newcol=list.head.col+1;
+                    newrow = list.head.row;
+                    newcol = list.head.col + 1;
+            }
+
+            if (hitSelfOrWall(newrow, newcol)) {
+                gameoverflag = true;
             }
 
 
-            if (hitSelfOrWall(newrow, newcol))
-            {
-                console.log("Game over!");
-                gameoverflag=true;
-            }
             list.insertAtBeginning(newrow, newcol);
+
 
             if (!hitfood(newrow, newcol))
                 list.deleteLastNode();
-            else
-            {
+            else {
                 randomfood();
                 drawfood();
             }
-
         }
 
-
         function drawsnake() {
-            if (gameoverflag==true)
+            if (gameoverflag === true) {
+                list.head = null;
                 return;
+            }
 
             drawboard();
             drawfood();
-
+            let x, y;
+            //Draw Body
             ctx.beginPath();
-            ctx.fillStyle=snakecolor;
-
-            agent=list.head;
-            while (agent!=null)
-            {
-                y=agent.row*cellsize;
-                x=agent.col*cellsize;
-                ctx.rect (x, y, inndercellsize, inndercellsize);
-                agent=agent.next;
+            ctx.fillStyle = snakecolor;
+            let agent = list.head;
+            while (agent != null) {
+                y = agent.row * cellsize;
+                x = agent.col * cellsize;
+                ctx.rect(x, y, inndercellsize, inndercellsize);
+                agent = agent.next;
             }
+            ctx.fill();
+            ctx.closePath();
 
+            //Draw Tail
+            ctx.beginPath();
+            ctx.fillStyle = tailcolor;
+            agent = list.head;
+            while (agent.next != null) {
+                agent = agent.next;
+            }
+            y = agent.row * cellsize;
+            x = agent.col * cellsize;
+            ctx.rect(x, y, inndercellsize, inndercellsize);
+            ctx.fill();
+            ctx.closePath();
 
+            //Draw Head
+            ctx.beginPath();
+            ctx.fillStyle = headcolor;
+            agent = list.head;
+            y = agent.row * cellsize;
+            x = agent.col * cellsize;
+            ctx.rect(x, y, inndercellsize, inndercellsize);
             ctx.fill();
             ctx.closePath();
         }
-
-        function drawsnake2() {
-
-
-            ctx.beginPath();
-
-            for (var i = 0; i < coords.length; i++) {
-                var x = coords[i].x*cellsize;
-                var y = coords[i].y*cellsize;
-                ctx.fillStyle=snakecolor;
-                ctx.rect (x, y, inndercellsize, inndercellsize);
-
-            }
-
-
-            ctx.fill();
-            ctx.closePath();
-        }
-
 
 
     }
 
 
-);
 
-//https://www.w3schools.com/tags/ref_canvas.asp
-//
 
-/*
-function storeCoordinate(xVal, yVal, array) {
-    array.push({x: xVal, y: yVal});
-}
 
-var coords = [];
-storeCoordinate(1, 2, coords);
-storeCoordinate(1, 3, coords);
-storeCoordinate(2, 3, coords);
 
-console.log(coords[0].x , coords[0].y)
-
-// to loop through coordinate values
-for (var i = 0; i < coords.length; i++) {
-    var x = coords[i].x;
-    var y = coords[i].y;
-    console.log(x,y);
-}
-*/
