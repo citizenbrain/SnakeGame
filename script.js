@@ -5,9 +5,9 @@ window.onload = function(){
 }
 
 class Node{
-    constructor(row, col, next = null){
+    constructor(row, column, next = null){
             this.row = row;
-            this.col = col;
+            this.column = column;
             this.next = next;
     }
 }
@@ -18,8 +18,8 @@ class LinkedList{
     }
 }
 
-LinkedList.prototype.insertAtBeginning = function(row, col){
-    let newNode = new Node(row, col);
+LinkedList.prototype.insertAtBeginning = function(row, column){
+    let newNode = new Node(row, column);
     newNode.next = this.head;
     this.head = newNode;
     return this.head;
@@ -103,7 +103,7 @@ function letsGo(){
             foodRow = Math.floor(Math.random() * rowNumber);
             foodColumn = Math.floor(Math.random() * columnNumber);
             while (agent != null) {
-                if (foodRow === agent.row && foodColumn === agent.col) {
+                if (foodRow === agent.row && foodColumn === agent.column) {
                     randomFood();
                 }
                 agent = agent.next;
@@ -126,8 +126,8 @@ function letsGo(){
 
             for (let row = 0, i = 0; i < rowNumber; row += cellSize, i++) {
 
-                for (let col = 0, j = 0; j < columnNumber; col += cellSize, j++) {
-                    ctx.rect(row, col, innerCellSize, innerCellSize);
+                for (let column  = 0, j = 0; j < columnNumber; column += cellSize, j++) {
+                    ctx.rect(row, column , innerCellSize, innerCellSize);
                 }
             }
             ctx.fill();
@@ -152,15 +152,15 @@ function letsGo(){
                 paragraph.textContent = 'The Game has started!';
             } else {
                 startButton.value = 'Start';
-                paragraph.textContent = 'The Game is stopped! Click Reset to start a new game!';
+                paragraph.textContent = 'The Game is stopped! Click Reset to start a new Game!';
                 gameOverFlag = true;
             }
         }
 
         let direction = 'up';
 
-        function collide(row1, col1, row2, col2) {
-            return row1 === row2 && col1 === col2;
+        function collide(row1, column1, row2, column2) {
+            return row1 === row2 && column1 === column2;
         }
 
         function hitFood(row, col) {
@@ -168,20 +168,20 @@ function letsGo(){
             return !!collide(row, col, foodRow, foodColumn);
         }
 
-        function hitSelfOrWall(newrow, newcol) {
+        function hitSelfOrWall(newRow, newColumn) {
             let agent;
             agent = list.head;
             while (agent != null) {
-                if (collide(newrow, newcol, agent.row, agent.col)) {
+                if (collide(newRow, newColumn, agent.row, agent.column)) {
                     alert("You hit yourself game over!");
                     startButton.value = 'Start';
-                    paragraph.textContent = 'The Game is stopped! Click Reset to start a new game!';
+                    paragraph.textContent = 'The Game is stopped! Click Reset to start a new Game!';
                     return true;
                 }
-                if (agent.row >= rowNumber || agent.col >= columnNumber || agent.row < 0 || agent.col < 0) {
+                if (agent.row >= rowNumber || agent.column >= columnNumber || agent.row < 0 || agent.column < 0) {
                     alert("You went off the board!");
                     startButton.value = 'Start';
-                    paragraph.textContent = 'The Game is stopped! Click Reset to start a new game!';
+                    paragraph.textContent = 'The Game is stopped! Click Reset to start a new Game!';
                     return true;
                 }
 
@@ -200,20 +200,20 @@ function letsGo(){
             switch (direction) {
                 case 'up':
                     newRow = list.head.row - 1;
-                    newColumn = list.head.col;
+                    newColumn = list.head.column;
                     break;
                 case 'left':
                     newRow = list.head.row;
-                    newColumn = list.head.col - 1;
+                    newColumn = list.head.column - 1;
 
                     break;
                 case 'down':
                     newRow = list.head.row + 1;
-                    newColumn = list.head.col;
+                    newColumn = list.head.column;
                     break;
                 case 'right':
                     newRow = list.head.row;
-                    newColumn = list.head.col + 1;
+                    newColumn = list.head.column + 1;
             }
 
             if (hitSelfOrWall(newRow, newColumn)) {
@@ -246,7 +246,7 @@ function letsGo(){
             let agent = list.head;
             while (agent != null) {
                 y = agent.row * cellSize;
-                x = agent.col * cellSize;
+                x = agent.column * cellSize;
                 ctx.rect(x, y, innerCellSize, innerCellSize);
                 agent = agent.next;
             }
@@ -261,7 +261,7 @@ function letsGo(){
                 agent = agent.next;
             }
             y = agent.row * cellSize;
-            x = agent.col * cellSize;
+            x = agent.column * cellSize;
             ctx.rect(x, y, innerCellSize, innerCellSize);
             ctx.fill();
             ctx.closePath();
@@ -271,7 +271,7 @@ function letsGo(){
             ctx.fillStyle = headColor;
             agent = list.head;
             y = agent.row * cellSize;
-            x = agent.col * cellSize;
+            x = agent.column * cellSize;
             ctx.rect(x, y, innerCellSize, innerCellSize);
             ctx.fill();
             ctx.closePath();

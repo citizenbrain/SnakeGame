@@ -1,0 +1,12 @@
+body {
+    background-color: cadetblue;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 1em;
+    padding: 1em;
+}
+div {
+    text-align: center;
+}
+p {
+    color: ghostwhite;
+}

@@ -9,24 +9,31 @@
 
 <body>
 <script src="script.js"></script>
-<h1>Brian Butler - Fall 2020</h1>
+
+
+<h1>Snake Game!</h1>
+<h2>Brian Butler - Fall 2020</h2>
+<h3><a href="summary.html">Summary</a></h3>
+<div class="block">
 <input type="button"
        value="Start" id="start">
 <input type="button"
        value="Reset" id="reset" onclick="letsGo()">
+</div>
+
+<canvas id="grid" width=400 height=400></canvas>
 
 <div>
-Click start to play!
+    Click start to play!
+
 <pre>
 <span>I</span>: move up
 <span>J</span>: move left
 <span>K</span>: move down
 <span>L</span>: move right
 </pre>
+
 </div>
-
-<canvas id="grid" width=400 height=400></canvas>
-
 <p></p>
 
 </body>

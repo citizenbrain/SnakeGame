@@ -2,14 +2,16 @@ body {
     text-align: center;
     color: white;
     background-color: cadetblue;
-}
-h1 {
-    font-size: 1em;
     font-family: "Comic Sans MS" ,sans-serif;
-}
-p {
     font-size: 1em;
-    font-family: "Comic Sans MS" ,sans-serif;
+}
+
+@keyframes snakes {
+    from {color: chartreuse;}
+    to {color: red;}
+}
+div.block {
+    display: block;
 }
 input[value=Start] {
     background-color: green;
@@ -29,6 +31,17 @@ input#reset{
     margin: 0.5em;
 }
 
+h2 {
+    color: ghostwhite;
+}
+
+h1 {
+    animation-name: snakes;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 div span {
     font-weight: bold;
     color: black;
@@ -39,9 +52,9 @@ div {
 }
 
 canvas {
-
     padding: 1em;
     background-color: black;
     border: 0.5em groove brown;
     text-align: center;
+    margin: 1em;
 }

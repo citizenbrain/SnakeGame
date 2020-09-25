@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56afa9d7-61c0-477d-ad06-43ed8338f57a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/summaryStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bird.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assignment_snake(2).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Capture.PNG" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -74,7 +77,7 @@
       <workItem from="1601003891716" duration="1404000" />
       <workItem from="1601005426766" duration="37000" />
       <workItem from="1601006688596" duration="2085000" />
-      <workItem from="1601038833040" duration="2551000" />
+      <workItem from="1601038833040" duration="6545000" />
     </task>
     <task id="LOCAL-00001" summary="cha cha changes">
       <created>1600818623669</created>
@@ -90,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601003529082</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cha cha changes">
+      <created>1601041636224</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601041636224</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,9 +111,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="cha cha changes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1535" y="628" key="CommitChangelistDialog2" timestamp="1601003528398">
-      <screen x="0" y="0" width="3840" height="2120" />
+    <state x="768" y="176" key="CommitChangelistDialog2" timestamp="1601041635063">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="768" y="176" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1601041635063" />
     <state x="1535" y="628" key="CommitChangelistDialog2/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601003528398" />
     <state x="1793" y="957" key="Github.ShareDialog" timestamp="1600816114243">
       <screen x="0" y="0" width="3840" height="2120" />
@@ -161,9 +172,10 @@
       <screen x="0" y="0" width="3840" height="2120" />
     </state>
     <state width="3797" height="782" key="GridCell.Tab.2.right/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601003775774" />
-    <state x="1512" y="792" key="Vcs.Push.Dialog.v2" timestamp="1601003531546">
-      <screen x="0" y="0" width="3840" height="2120" />
+    <state x="756" y="389" key="Vcs.Push.Dialog.v2" timestamp="1601041638368">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="756" y="389" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1601041638368" />
     <state x="1512" y="792" key="Vcs.Push.Dialog.v2/0.0.3840.2120/-1920.121.1920.1040@0.0.3840.2120" timestamp="1601003531546" />
     <state x="1060" y="68" width="1736" height="1936" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601008771370">
       <screen x="0" y="0" width="3840" height="2120" />
